@@ -1,6 +1,6 @@
-function TodoScrore(){
+function TodoScrore({completed,total}){
     return(
-        <h1>Has completado 4 de 5 Todos</h1>
+        <h1>Has completado {completed} de {total} Todos</h1>
     );
 }
 

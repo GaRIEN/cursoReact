@@ -1,8 +1,8 @@
-function Todo() {
+function Todo(props) {
     return (
       <li>
         <span> V</span>
-        <p>Veamos pelicula</p>
+        <p>{props.text}</p>
         <span>X</span>
       </li>
     );

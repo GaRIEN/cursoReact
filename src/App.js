@@ -3,21 +3,30 @@ import { Todo } from "./Todo";
 import { TodoInput } from "./TodoInput";
 import { TodoList } from "./TodoList";
 import { TodoScrore } from "./TodoScore";
-import {ButtonAgregarTodo} from "./ButtonAgregarTodo";
+import { ButtonAgregarTodo } from "./ButtonAgregarTodo";
+import React from "react";
+
+const defaultTodos = [
+  { text: "llorar por la llorona", completed: true },
+  { text: "llorar picando cebolla", completed: true }
+];
 
 function App() {
   return (
-    <div className="App">
-      <TodoScrore/>
-      <TodoInput/>
+    <React.Fragment>
+      <TodoScrore completed={10} total={25} />
+      <TodoInput />
       <TodoList>
-        <Todo/>
-        <Todo />
-        <Todo />
+        {defaultTodos.map((todoitem) => (
+          <Todo
+            key={todoitem.text}
+            text={todoitem.text}
+            completed={todoitem.completed}
+          />
+        ))}
       </TodoList>
-
       <ButtonAgregarTodo />
-    </div>
+    </React.Fragment>
   );
 }
 export default App;
